@@ -6,24 +6,35 @@
 		<uib-tabset active="activeJustified" justified="true">
 		    <uib-tab index="0" heading="Info">
 		    	<form class="propadd-form">
-					<p class="col-md-4">中文名称<span style="color:red;">*</span></p>
-					<input type="text" ng-model="$ctrl.property.name_zh" class="col-md-8" />
-					<p class="col-md-4">英文名称</p>
-					<input type="text" ng-model="$ctrl.property.name_en" class="col-md-8" />
-					<p class="col-md-4">地产种类<span style="color:red;">*</span></p>
-					<select name="property_type" id="property_type" ng-model="$ctrl.property.property_type" class="col-md-8">
-						<option value="">--请选择--</option>
-						<option value="COMMERCIAL PROPERTY">商业地产</option>
-						<option value="RESALE HOME">二手房</option>
-						<option value="PRE-CONSTRUCTION HOME">期房</option>
-						<option value="UNDER CONSTRUCTION HOME">在建</option>
-						<option value="BUSINESS">生意</option>
-						<option value="INVESTMENT">投资</option>
-					</select>
-					<p class="col-md-12">中文介绍</p>
-					<textarea class="col-md-12" ng-model="$ctrl.property.description_zh" cols="30" rows="10"></textarea>
-					<p class="col-md-12">英文介绍</p>
-					<textarea class="col-md-12" ng-model="$ctrl.property.description_en" cols="30" rows="10"></textarea>
+		    		<div class="form-group">
+		    			<p class="">中文名称<span style="color:red;">*</span></p>
+						<input type="text" ng-model="$ctrl.property.name_zh" class="form-control" />	
+		    		</div>
+					<div class="form-group">
+						<p class="">英文名称</p>
+						<input type="text" ng-model="$ctrl.property.name_en" class="form-control" />	
+					</div>
+					<div class="form-group">
+						<p class="">地产种类<span style="color:red;">*</span></p>
+						<select name="property_type" id="property_type" ng-model="$ctrl.property.property_type" class="form-control">
+							<option value="">--请选择--</option>
+							<option value="COMMERCIAL PROPERTY">商业地产</option>
+							<option value="RESALE HOME">二手房</option>
+							<option value="PRE-CONSTRUCTION HOME">期房</option>
+							<option value="UNDER CONSTRUCTION HOME">在建</option>
+							<option value="BUSINESS">生意</option>
+							<option value="INVESTMENT">投资</option>
+						</select>	
+					</div>
+					<div class="form-group">
+						<p class="">中文介绍</p>
+						<textarea class="form-control" ng-model="$ctrl.property.description_zh" cols="30" rows="10"></textarea>	
+					</div>
+					<div class="form-group">
+						<p class="">英文介绍</p>
+						<textarea class="form-control" ng-model="$ctrl.property.description_en" cols="30" rows="10"></textarea>	
+					</div>
+					
 					<a type="submit" ng-click="$ctrl.saveProperty()" class="btn btn-default">保存</a>
 					<a ng-click="$ctrl.reset()" class="btn btn-default">还原</a>
 					<a class="btn btn-default" ng-click="$ctrl.cancel()">取消</a>
@@ -38,14 +49,18 @@
 							</div>
 							<div class="img-item-info">
 								<form>
-									<p class="col-md-12">Chinese description</p>
-									<textarea name="" id="" cols="30" rows="2" ng-model="photo.description_zh" class="col-md-12">
-										{{ photo.description_zh }}
-									</textarea>
-									<p class="col-md-12">English description</p>
-									<textarea name="" id="" cols="30" rows="2" ng-model="photo.description_en" class="col-md-12">
-										{{ photo.description_en }}
-									</textarea>
+									<div class="form-group">
+										<p class="">中文描述</p>
+										<textarea name="" id="" cols="30" rows="2" ng-model="photo.description_zh" class="form-control">
+											{{ photo.description_zh }}
+										</textarea>	
+									</div>
+									<div class="form-group">
+										<p class="">英文描述</p>
+										<textarea name="" id="" cols="30" rows="2" ng-model="photo.description_en" class="form-control">
+											{{ photo.description_en }}
+										</textarea>	
+									</div>
 									<a href="#" class="btn btn-success item-btn-save" ng-click="$ctrl.updateImage(photo)">Save</a>
 									<a href="#" class="btn btn-warning item-btn-reset" ng-click="$ctrl.reset()">Reset</a>
 									<a href="#" class="btn btn-danger item-btn-delete" ng-click="$ctrl.removeImage(photo)">Delete</a>

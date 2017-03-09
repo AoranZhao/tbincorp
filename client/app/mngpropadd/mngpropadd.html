@@ -5,25 +5,34 @@
 		<h1>添加地产</h1>
 		<div>
 			<form class="propadd-form">
-				<p class="col-md-4">中文名称<span style="color:red;">*</span></p>
-				<input type="text" ng-model="$ctrl.newProperty.name_zh" class="col-md-8" />
-				<p class="col-md-4">英文名称</p>
-				<input type="text" ng-model="$ctrl.newProperty.name_en" class="col-md-8" />
-				<p class="col-md-4">地产种类<span style="color:red;">*</span></p>
-				<select name="property_type" id="property_type" ng-model="$ctrl.newProperty.property_type" class="col-md-8">
-					<option value="">--请选择--</option>
-					<option value="COMMERCIAL PROPERTY">商业地产</option>
-					<option value="RESALE HOME">二手房</option>
-					<option value="PRE-CONSTRUCTION HOME">期房</option>
-					<option value="UNDER CONSTRUCTION HOME">在建</option>
-					<option value="BUSINESS">生意</option>
-					<option value="INVESTMENT">投资</option>
-				</select>
-				<p class="col-md-12">中文介绍</p>
-				<textarea class="col-md-12" ng-model="$ctrl.newProperty.description_zh" cols="30" r
-				ows="10"></textarea>
-				<p class="col-md-12">英文介绍</p>
-				<textarea class="col-md-12" ng-model="$ctrl.newProperty.description_en" cols="30" rows="10"></textarea>
+				<div class="form-group">
+					<p class="">中文名称<span style="color:red;">*</span></p>
+					<input type="text" ng-model="$ctrl.newProperty.name_zh" class="form-control" />	
+				</div>
+				<div class="form-group">
+					<p class="">英文名称</p>
+					<input type="text" ng-model="$ctrl.newProperty.name_en" class="form-control" />	
+				</div>
+				<div class="form-group">
+					<p class="">地产种类<span style="color:red;">*</span></p>
+					<select name="property_type" id="property_type" ng-model="$ctrl.newProperty.property_type" class="form-control">
+						<option value="">--请选择--</option>
+						<option value="COMMERCIAL PROPERTY">商业地产</option>
+						<option value="RESALE HOME">二手房</option>
+						<option value="PRE-CONSTRUCTION HOME">期房</option>
+						<option value="UNDER CONSTRUCTION HOME">在建</option>
+						<option value="BUSINESS">生意</option>
+						<option value="INVESTMENT">投资</option>
+					</select>	
+				</div>
+				<div class="form-group">
+					<p class="">中文介绍</p>
+					<textarea class="form-control" ng-model="$ctrl.newProperty.description_zh" cols="30" rows="10"></textarea>	
+				</div>
+				<div class="form-group">
+					<p class="">英文介绍</p>
+					<textarea class="form-control" ng-model="$ctrl.newProperty.description_en" cols="30" rows="10"></textarea>	
+				</div>
 				<a type="submit" ng-click="$ctrl.addProperty()" class="btn btn-default">添加</a>
 				<a ng-click="$ctrl.clear()" class="btn btn-default">清空</a>
 				<a ng-click="$ctrl.cancel()" class="btn btn-default">取消</a>
