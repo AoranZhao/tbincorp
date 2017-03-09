@@ -7,7 +7,8 @@
 			<div ng-repeat="property in $ctrl.properties">
 				<div class="left zw-nei-item">
 					<div class="left zw-nei-pic">
-						<img src="../../assets/images/list-pic.jpg" alt="" width="240" height="180">
+						<img src="../../assets/images/list-pic.jpg" alt="" width="240" height="180" ng-hide="property.images[0].image.filename">
+						<img ng-src="../../assets/images/photos/{{ property.images[0].image.filename }}" alt="" width="240" height="180" ng-show="property.images[0].image.filename">
 					</div>
 					<div class="left zw-nei-ju">
 						<div class="zw-nei-title">{{ property.name_zh }}</div>
