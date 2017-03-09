@@ -1,0 +1,26 @@
+<div class="top-line-bg">
+	<div class="width">
+		<mngsidebar></mngsidebar>
+		<div class="left zw">
+			<h1>关于我们</h1>
+			<form class="aboutme-form">
+				<p class="col-md-4">中文介绍</p>
+				<textarea name="" id="" cols="30" rows="10" ng-model="$ctrl.aboutme.description_zh" class="col-md-8"></textarea>
+				<p class="col-md-4">英文介绍</p>
+				<textarea name="" id="" cols="30" rows="10" ng-model="$ctrl.aboutme.description_en" class="col-md-8"></textarea>
+				<p class="col-md-4">Facebook:</p>
+				<input type="text" class="col-md-8" ng-model="$ctrl.aboutme.facebook" />
+				<p class="col-md-4">Twitter:</p>
+				<input type="text" class="col-md-8" ng-model="$ctrl.aboutme.twitter" />
+				<p class="col-md-4">Linkedin:</p>
+				<input type="text" class="col-md-8" ng-model="$ctrl.aboutme.linkedin" />
+				<p class="col-md-4">Email:</p>
+				<input type="text" class="col-md-8" ng-model="$ctrl.aboutme.email" />
+				<div class="col-md-12">
+					<a type="submit" ng-click="$ctrl.save()" class="btn btn-default">保存</a>
+					<a ng-click="$ctrl.reset()" class="btn btn-default">还原</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

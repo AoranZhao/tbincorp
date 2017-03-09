@@ -1,0 +1,40 @@
+.side {
+	float: left;
+	background-color: gray;
+	margin: 20px 30px 0 0;
+	width: 200px;
+}
+
+.side a {
+	text-decoration: none;
+	display: block;
+	width: 200px;
+	height: 44px;
+	line-height: 44px;
+	font-size: 18px;
+	color: #05204c;
+	padding-left: 40px;
+	background: url('/assets/images/list-bg.jpg') no-repeat;
+}
+
+.side a:hover {
+	color: #468261;
+}
+
+.side-resi-bt {
+	position: relative;
+}
+
+.side-resi {
+	position: absolute;
+	display: none;
+	z-index: 1;
+	margin: -44px 0 0 200px;
+}
+
+.side-resi-bt:hover .side-resi{
+	display: block;
+}
+
+
+

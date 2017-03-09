@@ -1,0 +1,81 @@
+<div class="top-bg">
+  <div class="width">
+      <div class="left top-tell">Call Us Now :647-918-9166</div>
+        <div class="right top-list">
+          <ul>
+              <!-- <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li> -->
+              <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="login" class="nav-fa-link"><i class="fa fa-sign-in fa-inverse"></i></a></li>
+              <li ng-show="$ctrl.isLoggedIn()"><p style="margin: 0 5px;">Hello {{ $ctrl.getCurrentUser().name }}</p></li>
+              <!-- <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings" class="nav-fa-link"><i class="fa fa-cog fa-inverse"></i></a></li> -->
+              <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active">
+                <div class="sub-nav-set-bt">
+                  <a href="#" class="nav-fa-link"><i class="fa fa-cog fa-inverse"></i></a>
+                  <div class="sub-nav-set">
+                    <a ui-sref="mnglist"><i class="fa fa-database fa-inverse"></i></a>
+                    <a ui-sref="settings"><i class="fa fa-key fa-inverse"></i></a>
+                    <a ng-show="$ctrl.isAdmin()" ui-sref-active="active" ui-sref="admin"><i class="fa fa-cogs fa-inverse"></i></a>
+                    <a ui-sref="logout" class="nav-fa-link"><i class="fa fa-sign-out fa-inverse"></i></a>
+                  </div>
+                </div>
+              </li>
+              <!-- <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout" class="nav-fa-link"><i class="fa fa-sign-out fa-inverse"></i></a></li> -->
+              <li><a href="{{ $ctrl.aboutme.facebook }}" target="_blank" class="nav-fa-link"><i class="fa fa-facebook fa-inverse"></i></a></li>
+              <li><a href="{{ $ctrl.aboutme.twitter }}" target="_blank" class="nav-fa-link"><i class="fa fa-twitter fa-inverse"></i></a></li>
+              <li><a href="{{ $ctrl.aboutme.linkedin }}" target="_blank" class="nav-fa-link"><i class="fa fa-linkedin fa-inverse"></i></a></li>
+              <li><a href="mailto: {{ $ctrl.aboutme.email }}" class="nav-fa-link"><i class="fa fa-envelope fa-inverse"></i></a></li>
+                <!-- <li><a href="#"><img src="../../assets/images/english.png" width="42" height="42" /></a></li> -->
+              <li></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="width">
+    <div class="super-nav">
+        <div class="left"><a href="index.html"><img src="../../assets/images/logo.png" width="119" height="94" /></a></div>
+        <div class="left tbin-nav">
+           <div class="anniu">
+              <a href="index.html" class="t1"><p class="title-zh">首页</p><p class="title-en">HOME</p></a>
+              <a ui-sref="list({cat: 'COMMERCIAL PROPERTY'})" class="t2"><p class="title-zh">商业地产</p><p class="title-en">COMMERCIAL PROPERTY</p></a>
+              <div class="sub-nav-resi-bt">
+                <a href="#" class="t3"><p class="title-zh">住宅地产</p><p class="title-en">RESIDENTIAL PROPERTY</p></a>
+                <div class="sub-nav-resi">
+                  <a ui-sref="list({cat: 'RESALE HOME'})" class="t31"><p>二手房<br />RESALE HOME</p></a><a ui-sref="list({cat: 'PRE-CONSTRUCTION HOME'})" class="t32"><p>期房<br />PRE-CONSTRUCTION HOME</p></a><a ui-sref="list({cat: 'UNDER CONSTRUCTION HOME'})" class="t33"><p>在建<br />UNDER CONSTRUCTION HOME</p></a>
+                </div>
+              </div>
+              <a ui-sref="list({cat: 'BUSINESS'})" class="t4"><p class="title-zh">生意</p><p class="title-en">BUSINESS</p></a>
+              <a ui-sref="list({cat: 'INVESTMENT'})" class="t5"><p class="title-zh">投资</p><p class="title-en">INVESTMENT</p></a>
+              <a ui-sref="aboutme" class="t6"><p class="title-zh">关于我们</p><p class="title-en">ABOUT US</p></a></div>
+        </div>
+    </div>
+</div>
+<!-- <div style="margin-top:20px;"></div> -->
+<!-- <div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">project</a>
+    </div>
+    <div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li ng-repeat="item in $ctrl.menu" ui-sref-active="active">
+            <a ui-sref="{{item.state}}">{{item.title}}</a>
+        </li>
+        <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
+      </ul> -->
+
+<!--       <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
+        <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
+        <li ng-show="$ctrl.isLoggedIn()"><p class="navbar-text">Hello {{ $ctrl.getCurrentUser().name }}</p> </li>
+        <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
+        <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
+      </ul> -->
+<!--     </div>
+  </div>
+</div>
+ -->

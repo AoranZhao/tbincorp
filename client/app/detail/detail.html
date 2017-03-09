@@ -1,0 +1,23 @@
+<div class="top-line-bg">
+	<div class="width">
+		<sidebar></sidebar>
+		<div class="left zw" ng-show="$ctrl.founded">
+			<h1>{{ $ctrl.property.name_zh }}</h1>
+			<div class="photo-bg" ng-show="$ctrl.property.images.length > 0">
+				<div uib-carousel active="$ctrl.active" interval="$ctrl.myInterval" no-wrap="$ctrl.noWrapSlides">
+					<div uib-slide ng-repeat="image in $ctrl.property.images" index="$index" class="photo-inner">
+						<img ng-src="../../assets/images/photos/{{ image.image.filename }}" />
+						<div class="carousel-caption">
+							<p>{{ image.description_zh }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="photo-bg" ng-hide="$ctrl.property.images.length > 0"><p>没有照片</p></div>
+			<div class="photo-zw"><p>{{ $ctrl.property.description_zh }}</p></div>
+		</div>
+		<div class="left" ng-hide="$ctrl.founded">
+			出错了！没有找到房源, 请邮件联系
+		</div>
+	</div>
+</div>

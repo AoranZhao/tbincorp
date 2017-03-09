@@ -1,0 +1,22 @@
+<div class="top-line-bg">
+	<div class="width">
+	<mngsidebar></mngsidebar>
+	<div class="left zw">
+		<h1>全部房产<a ui-sref="mngpropadd"><i class="fa fa-pencil"></i></a></h1>
+		<div class="zw-nei">
+			<div ng-repeat="property in $ctrl.properties">
+				<div class="left zw-nei-item">
+					<div class="left zw-nei-pic">
+						<img src="../../assets/images/list-pic.jpg" alt="" width="240" height="180">
+					</div>
+					<div class="left zw-nei-ju">
+						<div class="zw-nei-title">{{ property.name_zh }}</div>
+						<div class="zw-nei-js">{{ property.description_zh }}</div>
+						<div class="mngbox"><a ui-sref="mngpropedit({id: property._id})" class="btn btn-warning mngEdit">编辑</a><a href="#" ng-click="$ctrl.delete(property._id)" class="mngDelete"><i class="fa fa-trash fa-2x"></i></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

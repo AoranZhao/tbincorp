@@ -1,0 +1,50 @@
+.img-item {
+	// height: 200px;
+	width: 720px;
+	padding: 0;
+	margin: 10px 0;
+	box-shadow: 0 0 8px 0 #aaa;
+}
+
+.img-item-img {
+	height: 230px;
+	width: 260px;
+	float: left;
+	position: relative;
+	margin: 0;
+}
+
+.img-item-img img {
+	max-height: 100%;
+	max-width: 100%;
+	height: auto;
+	width: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	margin: auto;
+}
+
+.img-item-info {
+	height: 230px;
+	margin-left: 280px;
+}
+
+.img-item-info p {
+	margin: 5px 0;
+}
+
+.img-item-info textarea {
+	resize: none;
+}
+
+.img-item-info a {
+	margin-top: 10px;
+}
+
+.item-btn-delete {
+	float: right;
+}

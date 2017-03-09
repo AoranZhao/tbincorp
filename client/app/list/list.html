@@ -1,0 +1,22 @@
+<div class="top-line-bg">
+	<div class="width">
+	<sidebar></sidebar>
+	<div class="left zw">
+		<h1>地产列表</h1>
+		<div class="zw-nei">
+			<div ng-repeat="property in $ctrl.properties">
+				<div class="left zw-nei-item">
+					<div class="left zw-nei-pic">
+						<img src="../../assets/images/list-pic.jpg" alt="" width="240" height="180">
+					</div>
+					<div class="left zw-nei-ju">
+						<div class="zw-nei-title">{{ property.name_zh }}</div>
+						<div class="zw-nei-js">{{ property.description_zh }}</div>
+						<div><a ui-sref="detail({id: property._id})"><img src="../../assets/images/detail.png" alt="" width="112" height="34"></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
