@@ -88,6 +88,15 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
         .$promise;
     },
 
+    createUserByAdmin(user, callback) {
+      return User.save(user, function(data) {
+        return safeCb(callback)(null, user);
+      }, function(err) {
+        return safeCb(callback)(err);
+      })
+        .$promise;
+    },
+
     /**
      * Change password
      *
