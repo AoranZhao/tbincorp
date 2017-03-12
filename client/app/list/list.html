@@ -4,7 +4,7 @@
 	<div class="left zw">
 		<h1>地产列表</h1>
 		<div class="zw-nei">
-			<div ng-repeat="property in $ctrl.properties">
+			<div ng-repeat="property in $ctrl.show_properties">
 				<div class="left zw-nei-item">
 					<div class="left zw-nei-pic">
 						<img src="../../assets/images/list-pic.jpg" alt="" width="240" height="180" ng-hide="property.images[0].image.filename">
@@ -17,6 +17,7 @@
 					</div>
 				</div>
 			</div>
+			<ul uib-pagination total-items='$ctrl.pagination.totalItems' items-per-page='$ctrl.pagination.itemsPerPage' ng-model='$ctrl.pagination.current' max-size='$ctrl.pagination.maxSize' class='pagination-sm' boundary-link-numbers='true' ng-change='$ctrl.changePage()'></ul>
 		</div>
 	</div>
 </div>
