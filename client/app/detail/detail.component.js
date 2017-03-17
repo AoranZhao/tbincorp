@@ -13,9 +13,10 @@ export class detailComponent {
   active = 0;
 
   /*@ngInject*/
-  constructor($http, $stateParams) {
+  constructor($http, $stateParams, $sce) {
     this.$stateParams = $stateParams;
     this.$http = $http;
+    this.$sce = $sce;
   }
 
   $onInit() {
@@ -25,6 +26,10 @@ export class detailComponent {
         this.founded = true;
         console.log(this.property);
       });
+  }
+
+  trustSrc(src) {
+    return this.$sce.trustAsResourceUrl(src);
   }
 }
 

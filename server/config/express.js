@@ -66,7 +66,7 @@ export default function(app) {
    *
    * "env !== 'development'" is added for 403 error
    */
-  if(env !== 'test' && env !== 'development' && !process.env.SAUCE_USERNAME) {
+  if(env !== 'test' && env !== 'development' && env !== 'production' && !process.env.SAUCE_USERNAME) {
     app.use(lusca({
       csrf: {
         angular: true

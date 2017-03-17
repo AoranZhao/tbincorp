@@ -131,6 +131,7 @@ export function uploadImage(req, res) {
   for (var i = 0; i < req.files.length; i++) {
     images.push({image: req.files[i], description_en: '', description_zh: ''});
   }
+  console.log(images);
   return Property.insertImages({_id: req.params.id}, images).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));

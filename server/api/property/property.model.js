@@ -35,6 +35,9 @@ var PropertySchema = new mongoose.Schema({
     description_en: String, 
     description_zh: String
   }],
+  vr_link: {
+    type: String
+  },
   created_date: {
   	type: Date,
   	required: true,

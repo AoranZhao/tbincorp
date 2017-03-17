@@ -8,10 +8,11 @@ export class mngpropeditComponent {
   property = {};
 
   /*@ngInject*/
-  constructor($http, $stateParams, $state, FileUploader) {
+  constructor($http, $stateParams, $state, FileUploader, $sce) {
     this.$http = $http;
     this.$stateParams = $stateParams;
     this.$state = $state;
+    this.$sce = $sce;
     this.uploader = new FileUploader({
       url: 'api/properties/upload/' + $stateParams.id,
       onCompleteAll: (() => {
@@ -25,6 +26,10 @@ export class mngpropeditComponent {
   $onInit() {
     this.reset();
     console.log(this.uploader);
+  }
+
+  trustSrc(src) {
+    return this.$sce.trustAsResourceUrl(src);
   }
 
   reset() {
@@ -42,7 +47,8 @@ export class mngpropeditComponent {
           name_en: this.property.name_en,
           description_zh: this.property.description_zh,
           description_en: this.property.description_en,
-          property_type: this.property.property_type
+          property_type: this.property.property_type,
+          vr_link: this.property.vr_link
         }).then(response => {
           this.$state.go('mnglist', {cat: 'ALL'})
         });
