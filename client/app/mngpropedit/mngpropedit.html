@@ -65,9 +65,11 @@
 											{{ photo.description_en }}
 										</textarea>	
 									</div>
-									<a href="#" class="btn btn-success item-btn-save" ng-click="$ctrl.updateImage(photo)">Save</a>
-									<a href="#" class="btn btn-warning item-btn-reset" ng-click="$ctrl.reset()">Reset</a>
-									<a href="#" class="btn btn-danger item-btn-delete" ng-click="$ctrl.removeImage(photo)">Delete</a>
+									<div class="item-btns">
+										<a href="#" class="btn btn-success item-btn-save" ng-click="$ctrl.updateImage(photo)">Save</a>
+										<a href="#" class="btn btn-warning item-btn-reset" ng-click="$ctrl.reset()">Reset</a>
+										<a href="#" class="btn btn-danger item-btn-delete" ng-click="$ctrl.removeImage(photo)">Delete</a>
+									</div>
 								</form>
 							</div>
 						</div>
@@ -75,15 +77,25 @@
 				</ul>
 		    </uib-tab>
 		    <uib-tab index="2" heading="Add Images">
-		    	<input type="file" nv-file-select="" uploader="$ctrl.uploader" multiple />
-				<ul>
-					<li ng-repeat="item in $ctrl.uploader.queue">
-						Name: <span ng-bind="item.file.name"></span>
-						<button ng-click="item.remove()">Remove</button>
-						<!-- <button ng-click="item.upload()">Upload</button> -->
-					</li>
-				</ul>
-				<button ng-click=$ctrl.uploader.uploadAll()>Upload All</button>
+		    	<div class="uploader-box">
+		    		<input type="file" nv-file-select="" uploader="$ctrl.uploader" multiple />
+					<ul>
+						<li ng-repeat="item in $ctrl.uploader.queue">
+							Name: <span ng-bind="item.file.name"></span>
+							<button ng-click="item.remove()">Remove</button>
+							<!-- <button ng-click="item.upload()">Upload</button> -->
+						</li>
+					</ul>
+		    	</div>
+				<div>
+					Queue progress:
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" ng-style="{ 'width': $ctrl.uploader.progress + '%' }"></div>
+					</div>
+				</div>
+				<button ng-click="$ctrl.uploader.uploadAll()" ng-disabled="!$ctrl.uploader.getNotUploadedItems().length" class="btn btn-success btn-s">Upload All</button>
+				<button ng-click="$ctrl.uploader.cancelAll()" ng-disabled="!$ctrl.uploader.isUploading" class="btn btn-warning btn-s">Cancel All</button>
+				<button ng-click="$ctrl.uploader.clearQueue()" ng-disabled="!$ctrl.uploader.queue.length" class="btn btn-danger btn-s">Remove All</button>
 		    </uib-tab>
 		    <uib-tab index="3" heading="VR">
 		  		<div>
